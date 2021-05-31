@@ -8,12 +8,6 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/' do
-    "This should populate first or... maybe not"
-    #I'm basically telling the controller to reroute to localhost:9393/articles page
-    redirect to '/articles'
-  end
-
   get '/articles' do
     @articles = Article.all
     #This is a reader that displays all of the contents in article.rb model.
