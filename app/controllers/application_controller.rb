@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/articles' do
+  get '/art' do
     @articles = Article.all
     #This is a reader that displays all of the contents in article.rb model.
     erb :index
