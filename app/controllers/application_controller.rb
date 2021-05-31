@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/articles' do
+  get '/articles' do # This is just a route location. You can change it, but it will break the code because other routes rely on this page to get to them
     @articles = Article.all
     #This is a reader that displays all of the contents in article.rb model.
     erb :index
@@ -47,7 +47,8 @@ class ApplicationController < Sinatra::Base
     # Article.all.clear - lesson learned. This doesn't work.
     # Article.clear - doesn't work too
     Article.delete(params[:id])
-
+    redirect to "/articles"
+    #redirect to the index page an error will populate because it doesn't know where to go after deletion
   end
 
 end

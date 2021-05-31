@@ -1,4 +1,6 @@
-<% @articles.each do |info| %>-
-    <%= info.title %>
-    <%= info.content %>
+<ul>
+<% @articles.each do |info| %>
+   <li><%= info.title %></li>
+    <li><%= info.content %></li>
 <% end %>
+</ul>
