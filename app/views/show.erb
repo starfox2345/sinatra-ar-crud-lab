@@ -1,0 +1,15 @@
+<title><%= @article.title %></title> #display the instance article title
+
+<%= @article.content %> #display the instance article content
+
+<form action="/articles/<%= @article.id %>" method="post">
+<%# action is where the method will be performed at %>
+<%# method=post. Therefore, it will be adding stuff to the route: %>
+<%# /articles/<%= @article.id %>
+<%# where the article id(a number) will be displayed %>
+
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    
+    <input type="submit"/>
+
+</form>
